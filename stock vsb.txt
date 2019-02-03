@@ -1,0 +1,26 @@
+Sub stockvolume()
+    For Each ws In Worksheets
+        Dim ticker As String
+        Dim volume As Double
+        Dim totalvolume As Double
+        Dim OutputRow As Integer
+        OutputRow = 2
+        totalvolume = 0
+        LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
+        ws.Cells(1, 9) = "Ticker"
+        ws.Cells(1, 10) = "Total Stock Volume"
+            For i = 2 To LastRow
+                volume = ws.Cells(i, 7).Value
+                    If ws.Cells(i + 1, 1) <> ws.Cells(i, 1) Then
+                    ticker = ws.Cells(i, 1)
+                    totalvolume = totalvolume + volume
+                    ws.Range("I" & OutputRow) = ticker
+                    ws.Range("J" & OutputRow) = totalvolume
+                    OutputRow = OutputRow + 1
+                    totalvolume = 0
+                    Else
+                    totalvolume = totalvolume + volume
+                    End If
+            Next i
+    Next
+End Sub
