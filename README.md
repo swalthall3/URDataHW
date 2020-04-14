@@ -1,58 +1,81 @@
-# Unit 6 | Assignment - What's the Weather Like?
+# Unit 2 | Assignment - The VBA of Wall Street
 
 ## Background
 
-Whether financial, political, or social -- data's true power lies in its ability to answer questions definitively. So let's take what you've learned about Python requests, APIs, and JSON traversals to answer a fundamental question: "What's the weather like as we approach the equator?"
+You are well on your way to becoming a programmer and Excel master! In this homework assignment you will use VBA scripting to analyze real stock market data. Depending on your comfort level with VBA, choose your assignment from Easy, Moderate, or Hard below.
 
-Now, we know what you may be thinking: _"Duh. It gets hotter..."_
+### Files
 
-But, if pressed, how would you **prove** it?
+* [Test Data](Resources/alphabtical_testing.xlsx) - Use this while developing your scripts.
 
-![Equator](Images/equatorsign.png)
+* [Stock Data](Resources/Multiple_year_stock_data.xlsx) - Run your scripts on this data to generate the final homework report.
 
-## WeatherPy
+### Stock market analyst
 
-In this example, you'll be creating a Python script to visualize the weather of 500+ cities across the world of varying distance from the equator. To accomplish this, you'll be utilizing a [simple Python library](https://pypi.python.org/pypi/citipy), the [OpenWeatherMap API](https://openweathermap.org/api), and a little common sense to create a representative model of weather across world cities.
+![stock Market](Images/stockmarket.jpg)
 
-Your objective is to build a series of scatter plots to showcase the following relationships:
+### Easy
 
-* Temperature (F) vs. Latitude
-* Humidity (%) vs. Latitude
-* Cloudiness (%) vs. Latitude
-* Wind Speed (mph) vs. Latitude
+* Create a script that will loop through each year of stock data and grab the total amount of volume each stock had over the year.
 
-Your final notebook must:
+* You will also need to display the ticker symbol to coincide with the total volume.
 
-* Randomly select **at least** 500 unique (non-repeat) cities based on latitude and longitude.
-* Perform a weather check on each of the cities using a series of successive API calls.
-* Include a print log of each city as it's being processed with the city number and city name.
-* Save both a CSV of all data retrieved and png images for each scatter plot.
+* Your result should look as follows (note: all solution images are for 2015 data).
 
-As final considerations:
+![easy_solution](Images/easy_solution.png)
 
-* You must complete your analysis using a Jupyter notebook.
-* You must use the Matplotlib or Pandas plotting libraries.
-* You must include a written description of three observable trends based on the data.
-* You must use proper labeling of your plots, including aspects like: Plot Titles (with date of analysis) and Axes Labels.
-* See [Example Solution](WeatherPy_Example.pdf) for a reference on expected format.
+### Moderate
 
-## Hints and Considerations
+* Create a script that will loop through all the stocks and take the following info.
 
-* The city data is generated based on random coordinates; as such, your outputs will not be an exact match to the provided starter notebook.
+  * Yearly change from what the stock opened the year at to what the closing price was.
 
-* You may want to start this assignment by refreshing yourself on the [geographic coordinate system](http://desktop.arcgis.com/en/arcmap/10.3/guide-books/map-projections/about-geographic-coordinate-systems.htm).
+  * The percent change from the what it opened the year at to what it closed.
 
-* Next, spend the requisite time necessary to study the OpenWeatherMap API. Based on your initial study, you should be able to answer  basic questions about the API: Where do you request the API key? Which Weather API in particular will you need? What URL endpoints does it expect? What JSON structure does it respond with? Before you write a line of code, you should be aiming to have a crystal clear understanding of your intended outcome.
+  * The total Volume of the stock
 
-* A starter code for Citipy has been provided. However, if you're craving an extra challenge, push yourself to learn how it works: [citipy Python library](https://pypi.python.org/pypi/citipy). Before you try to incorporate the library into your analysis, start by creating simple test cases outside your main script to confirm that you are using it correctly. Too often, when introduced to a new library, students get bogged down by the most minor of errors -- spending hours investigating their entire code -- when, in fact, a simple and focused test would have shown their basic utilization of the library was wrong from the start. Don't let this be you!
+  * Ticker symbol
 
-* Part of our expectation in this challenge is that you will use critical thinking skills to understand how and why we're recommending the tools we are. What is Citipy for? Why would you use it in conjunction with the OpenWeatherMap API? How would you do so?
+* You should also have conditional formatting that will highlight positive change in green and negative change in red.
 
-* In building your script, pay attention to the cities you are using in your query pool. Are you getting coverage of the full gamut of latitudes and longitudes? Or are you simply choosing 500 cities concentrated in one region of the world? Even if you were a geographic genius, simply rattling 500 cities based on your human selection would create a biased dataset. Be thinking of how you should counter this. (Hint: Consider the full range of latitudes).
+* The result should look as follows.
 
-* Lastly, remember -- this is a challenging activity. Push yourself! If you complete this task, then you can safely say that you've gained a strong mastery of the core foundations of data analytics and it will only go better from here. Good luck!
+![moderate_solution](Images/moderate_solution.png)
 
-## Copyright
+### Hard
 
-Data Boot Camp © 2018. All Rights Reserved.
+* Your solution will include everything from the moderate challenge.
 
+* Your solution will also be able to locate the stock with the "Greatest % increase", "Greatest % Decrease" and "Greatest total volume".
+
+* Solution will look as follows.
+
+![hard_solution](Images/hard_solution.png)
+
+### CHALLENGE
+
+* Make the appropriate adjustments to your script that will allow it to run on every worksheet just by running it once.
+
+* This can be applied to any of the difficulties.
+
+### Other Considerations
+
+* Use the sheet `alphabetical_testing.xlsx` while developing your code. This dataset is smaller and will allow you to test faster. Your code should run on this file in less than 3-5 minutes.
+
+* Make sure that the script acts the same on each sheet. The joy of VBA is to take the tediousness out of repetitive task and run over and over again with a click of the button.
+
+## Submission
+
+* To submit please upload the following to Github:
+
+  * A screen shot for each year of your results on the Multi Year Stock Data.
+
+  * VBA Scripts as separate files.
+
+* After everything has been saved, create a sharable link and submit that to <https://bootcampspot-v2.com/>.
+
+- - -
+
+### Copyright
+
+Coding Boot Camp © 2018. All Rights Reserved.
